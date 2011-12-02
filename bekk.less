@@ -1,0 +1,102 @@
+@black: #000;
+@white: #fff;
+@red: #FD5158;
+@yellow: #FFF9AE;
+@magenta: #36BDB2;
+@darkbrown: #6C6559;
+@brown: #887E6F;
+@lightbrown: #C9C0B5;
+
+@line-width: 6em;
+
+#bekk {
+  .slide {
+    color: @white;
+    background-color: @black;
+
+    .content {
+      padding-bottom: 2em;
+
+      .position { font-size: 0.7em; }
+    }
+  }
+
+  .front-page {
+    text-align: center;
+    font-style: italic;
+    vertical-align: bottom;
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      color: @white;
+      margin: 0 auto 3.2em auto;
+      width: 16em;
+
+      &:before { border: none; }
+
+      &:after {
+        border-top: 4px solid @red;
+        position: absolute;
+        left: 50%;
+        bottom: -1.6em;
+        content: "";
+        width: @line-width;
+        margin-left: -(@line-width / 2);
+        z-index: -1;
+      }
+    }
+
+    h2 { height: 3em; font-size: 1em; color: @lightbrown; font-weight: normal; margin: 2em auto 2em auto; max-width: 25em; }
+    p { font-size: 0.7em; color: @lightbrown; margin: 0.3em 0; }
+    .position { display: none; }
+  }
+
+  .agenda {
+    ul {
+      width: 16em;
+      list-style-type: none;
+      padding-left: 0;
+      float: right;
+      margin-top: 2.5em;
+
+      li {
+        border-bottom: 1px solid @lightbrown;
+
+        &:last-child { border-bottom: none; }
+      }
+    }
+  }
+
+  ul {
+    list-style: disc outside;
+    padding-left: 1em;
+
+    li {
+      color: @lightbrown;
+      padding: 0.4em 0;
+    }
+  }
+
+  h1 {
+    color: @red;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1.5em;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      border-top: 1px solid @lightbrown;
+      content: "";
+      position: absolute;
+      top: 0.6em; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+    }
+
+    span { background: @black; padding: 0 0.6em 0 0; }
+  }
+
+  a { color: @red; }
+}
