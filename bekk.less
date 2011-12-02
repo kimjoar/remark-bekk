@@ -12,6 +12,13 @@
 @logo-height: 115px;
 @logo-width: 466px;
 
+.bekk-logo(@factor, @position: center) {
+  background-image: url(images/bekk.png);
+  background-repeat: no-repeat;
+  background-position: @position;
+  background-size: @logo-width*@factor @logo-height*@factor;
+}
+
 #bekk {
   .slide {
     color: @white;
@@ -29,10 +36,7 @@
     font-style: italic;
     vertical-align: bottom;
 
-    background-image: url(images/bekk.png);
-    background-repeat: no-repeat;
-    background-position: center 30px;
-    background-size: @logo-width/7 @logo-height/7;
+    .bekk-logo(1/7, center 30px);
 
     h1 {
       position: relative;
