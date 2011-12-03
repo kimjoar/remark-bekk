@@ -139,18 +139,20 @@
   code { background-color: @lightbrown; }
 
   .red-circle-top-right {
-    @size: 150px;
+    @size: 170px;
     .rounded-corners(@size / 2);
 
     height: @size;
     width: @size;
+    line-height: @size;
+    vertical-align: center;
     background-color: @red;
     color: @black;
-    display: table-cell;
     text-align: center;
     vertical-align: middle;
     position: absolute;
     top: 3em;
     right: 3em;
+    overflow: hidden;
   }
 }
