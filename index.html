@@ -60,13 +60,15 @@ Prosjektet utførte et sett sentrale aktiviteter for å effektivisere organisasj
 
 ---
 
-.nice.middle.center
+# <span>Boks i hjørnet</span>
 
-Men hva er egentlig JavaScript?
+.red-circle-top-right[Men hva er egentlig JavaScript?]
+
+Well, it's not quite there yet
 
 ---
 
-## JavaScript
+# <span>JavaScript</span>
 
 * Det eneste programmeringsspråket som kjører i alle nettlesere.
 * Brukes for å gjøre ting på klientsiden, f.eks. jobbe med DOM-en.
@@ -77,7 +79,7 @@ Men hva er egentlig JavaScript?
 
 ---
 
-## Men hva er problemet med JavaScript?
+# <span>Men hva er problemet med JavaScript?</span>
 
 Et Ruby-eksempel:
 
@@ -86,7 +88,7 @@ Et Ruby-eksempel:
       person.name.capitalize
     end
 
-Men i JavaScript:
+Og et JavaScript-eksempel:
 
     .javascript
     var names = []
@@ -97,11 +99,11 @@ Men i JavaScript:
       names.push(name);
     }
 
-WTF?
+La oss gå gjennom noen av forskjellene.
 
 ---
 
-## Litt mer seriøst
+# Litt mer seriøst
 
 Det er lett å gjøre feil i JavaScript når man ikke kan språket skikkelig.
 
@@ -119,7 +121,7 @@ Det er til og med en egen bok om hvordan bruke JavaScript rett.
 
 ---
 
-## CoffeeScript ≈ Ruby = ♥
+# CoffeeScript ≈ Ruby = ♥
 
 Mye er likt Ruby, for eksempel:
 
@@ -136,7 +138,7 @@ Men CoffeeScript har noen særegenheter fra Ruby:
 
 ---
 
-## Variabler
+# Variabler
 
     .coffee
     myVariable = "test"
@@ -147,7 +149,7 @@ Helt likt Ruby — men camelcased.
 
 ---
 
-## Funksjoner
+# Funksjoner
 
 I CoffeeScript brukes `->` for å definere en funksjon:
 
@@ -170,7 +172,7 @@ Med parameter:
 
 ---
 
-## Funksjoner
+# Funksjoner
 
 Med default-variabler:
 
@@ -192,7 +194,7 @@ Med *splats*:
 
 ---
 
-## Funksjoner
+# Funksjoner
 
 Et velkjent Ruby-idiom er:
 
@@ -216,7 +218,7 @@ I CoffeeScript kan vi gjøre det samme:
 
 ---
 
-## Funksjoner
+# Funksjoner
 
 Paranteser er valgfritt:
 
@@ -234,7 +236,7 @@ Paranteser er valgfritt:
 
 ---
 
-## Førsteklasses funksjoner
+# Førsteklasses funksjoner
 
 I JavaScript kan man sende rundt funksjoner.
 
@@ -250,7 +252,7 @@ Altså kan en funksjon knyttes til en variabel, være input til en funksjon, ret
 
 ---
 
-## Anonyme funksjoner
+# Anonyme funksjoner
 
 Det som egentlig har skjedd så langt er at vi har knyttet en variabel til en *anonym funksjon*.
 
@@ -266,7 +268,7 @@ Selve funksjonen er altså kun:
 
 ---
 
-## Deklarere objekter
+# Deklarere objekter
 
 Some å lage en hash i Ruby:
 
@@ -285,7 +287,7 @@ Some å lage en hash i Ruby:
 
 ---
 
-## Deklarere objekter
+# Deklarere objekter
 
 La oss fjerne støyen:
 
@@ -301,7 +303,7 @@ La oss fjerne støyen:
 
 ---
 
-## Pattern matching
+# Pattern matching
 
     .coffee
     list = ["Ruby", "Python", "JavaScript"]
@@ -326,7 +328,7 @@ Den er smart:
 
 ---
 
-## Pattern matching på objekter
+# Pattern matching på objekter
 
     .coffee
     me =
@@ -340,7 +342,7 @@ Den er smart:
 
 ---
 
-## Ranges
+# Ranges
 
 Fungerer som i Ruby:
 
@@ -361,7 +363,7 @@ Og det fungerer også på strenger:
 
 ---
 
-## Iterere
+# Iterere
 
 Over arrays og ranges:
 
@@ -381,7 +383,7 @@ Med sjekk:
 
 ---
 
-## Iterere over objekter
+# Iterere over objekter
 
 (Legg merke til `of`, istedenfor `in`.)
 
@@ -404,7 +406,7 @@ Også her kan vi gjøre en sjekk:
 
 ---
 
-## Sjekk at ting er tilstede eller satt
+# Sjekk at ting er tilstede eller satt
 
 For å sjekke at et element er tilstede, kan man bruke `in`:
 
@@ -424,7 +426,7 @@ For å sjekke at en nøkkel er tilstede, kan man bruke `of`:
 
 ---
 
-## List Comprehensions
+# List Comprehensions
 
     .coffee
     doubles = (n * 2 for n in [1..5])
@@ -442,7 +444,7 @@ gjennomkjøring.
 
 ---
 
-## if
+# if
 
 Ganske likt Ruby:
 
@@ -464,14 +466,14 @@ Vi har også postfix-notasjon, som i Ruby:
 
 ---
 
-## unless
+# unless
 
 Vi har unless også i CoffeeScript:
 
     .coffee
     alert "bu!" unless person.name == "Kim Joar"
 
-## ?
+# ?
 
 Er en operator i CoffeeScript, ikke en del av funksjonsnavnet som i Ruby.
 
@@ -482,19 +484,7 @@ Er en operator i CoffeeScript, ikke en del av funksjonsnavnet som i Ruby.
 
 ---
 
-.nice.middle
-
-For å komme igang med å bruke CoffeeScript må vi forstå noen sentrale JavaScript-konsepter.
-
----
-
-.nice.middle
-
-JavaScript er .green[eventbasert]
-
----
-
-## Eventer
+# Eventer
 
 JavaScript fungerer annerledes enn Ruby. I Ruby kan du skrive:
 
@@ -508,7 +498,7 @@ Hvorfor?
 
 ---
 
-## Eventer
+# Eventer
 
 Vi vet ikke om `get_data` er ferdig når vi prøver å skrive ut. JavaScript har
 *ikke-blokkerende IO*.
@@ -521,7 +511,7 @@ I JavaScript (og CoffeeScript) sier vi:
 
 ---
 
-## Eventer
+# Eventer
 
 Istedenfor:
 
@@ -539,13 +529,7 @@ Her kaller vi funksjonen `getData` med en anonym funksjon som input. Dette er en
 
 ---
 
-.nice.middle
-
-JavaScript har .blue[lexical scoping] (WTF?!?)
-
----
-
-## Lexical scoping
+# Lexical scoping
 
 .gray[Psst, det er egentlig ganske simpelt og det er helt likt Ruby.]
 
@@ -569,7 +553,7 @@ Og hva skjer her?
 
 ---
 
-## Lexical scoping
+# Lexical scoping
 
 Grunnen til dette er at `outer` lever kun i funksjonen i det siste tilfellet. Det
 kan vi se om vi gjør det følgende isteden:
@@ -589,13 +573,7 @@ En variabel lever i et scope, som kan defineres på tre måter:
 
 ---
 
-.nice.middle
-
-.blue[Context] a.k.a. .red[this] a.k.a. .green[@]
-
----
-
-## this
+# this
 
 I Ruby bruker man `self` for å vise til objektet. I CoffeeScript vil dere se
 `this` og `@` mange plasser, men ikke bland de med `self` i Ruby.
@@ -607,7 +585,7 @@ La oss ta et eksempel.
 
 ---
 
-## this
+# this
 
     .coffee
     settNavn = (navn) -> @navn = navn
@@ -626,7 +604,7 @@ Dette er *veldig* praktisk når vi har førsteklasses funksjoner.
 
 ---
 
-## Kall en funksjon i en gitt kontekst
+# Kall en funksjon i en gitt kontekst
 
 (Dette er litt avansert, men viser hvordan JavaScript fungerer.)
 
@@ -643,7 +621,7 @@ Ved å bruke funksjonen `apply` kan man kalle en funksjon i en gitt kontekst:
 
 ---
 
-## Scope vs kontekst
+# Scope vs kontekst
 
 Scope avhenger av hvor funksjonen er definert.
 
@@ -651,7 +629,7 @@ Kontekst avhenger av hvordan funksjonen blir kalt.
 
 ---
 
-## Bind funksjonen (this == this)
+# Bind funksjonen (this == this)
 
 Når du ønsker at en funksjon kjører i den nåværende konteksten, uansett hvordan den er kalt, kan du binde `this`.
 
@@ -669,7 +647,7 @@ Et enkelt tegn. CoffeeScript ftw!
 
 ---
 
-## Klasser
+# Klasser
 
 Som i Ruby brukes `class`. En klassen kan ha en `constructor` som kjøres når
 man instansierer et objekt.
@@ -685,7 +663,7 @@ Og til hver nøkkel knytter vi en anonym funksjon.
 
 ---
 
-## Klasser
+# Klasser
 
 Det finnes en finere syntaks på konstruktøren når man bare skal sette en
 variabel etterpå:
@@ -698,7 +676,7 @@ Dette setter automagisk variabelen `@name` til input parameteren med samme navn.
 
 ---
 
-## Properties
+# Properties
 
 I en klasse har man *properties*, og det finnes to typer:
 
@@ -724,7 +702,7 @@ Tenk på `self` i Ruby-klasser, så går det bra!
 
 ---
 
-## Arv
+# Arv
 
     .coffee
     class Pet
@@ -752,7 +730,7 @@ Som i Ruby kan du bruke `super`, så tar den med alle input-parametre.
 
 ---
 
-## Kode tilgjengelig på tvers av filer
+# Kode tilgjengelig på tvers av filer
 
 For å ikke innføre mye global kode, er default i CoffeeScript å holde all kode
 privat innenfor hver `.coffee`-fil. Dere vil fort få behov for å dele kode mellom filer.
@@ -775,7 +753,7 @@ Legg så lite kode som mulig i det globale objektet!
 
 ---
 
-## Komme igang med CoffeeScript
+# Komme igang med CoffeeScript
 
 * Try CoffeeScript
 * Kommandolinje (med en `coffee`-kommando)
@@ -789,19 +767,7 @@ Legg så lite kode som mulig i det globale objektet!
 
 ---
 
-.nice.middle
-
-JavaScript (eller CoffeeScript) i nettleseren uten JQuery? .green[Nei, takk]
-
----
-
-.nice.large.middle.center
-
-.blue[$]
-
----
-
-## Hvorfor JQuery?
+# Hvorfor JQuery?
 
 * Cross-browser (a.k.a. håndtere .blue[IE])
 * osv
@@ -811,7 +777,7 @@ JavaScript (eller CoffeeScript) i nettleseren uten JQuery? .green[Nei, takk]
 
 ---
 
-## JQuery manipulerer DOM-en
+# JQuery manipulerer DOM-en
 
     .coffee
     $("#article p.big").html("test")
@@ -824,17 +790,7 @@ osvosvosv.
 
 ---
 
-.nice.middle
-
-".red[p]" matcher *paragraf*-elementer
-
-".green[#]big" matcher på id-en *big*
-
-".blue[.]test" matcher på klassen *test*
-
----
-
-## Et eksempel fra koden til denne presentasjonen
+# Et eksempel fra koden til denne presentasjonen
 
     .coffee
     $("code.coffee:contains('alert')")
@@ -850,7 +806,7 @@ Dette matcher da HTML-en som ser slik ut:
 
 ---
 
-## .bind kobler en funksjon til en event
+# .bind kobler en funksjon til en event
 
 Nettlesere har et sett med innebygde eventer, f.eks.:
 
@@ -864,7 +820,7 @@ Vi kan dermed kalle en funksjon for eksempel når en bruker klikker på en link.
 
 ---
 
-## Eksempel på bind med JQuery
+# Eksempel på bind med JQuery
 
     .coffee
     $('.shopping_cart').bind 'click', (event) =>
@@ -882,18 +838,6 @@ Her ser vi verdien av at `this` avhenger av konteksten.
 
 ---
 
-.nice.middle.center
-
-Mer om JQuery: [api.jquery.com](http://api.jquery.com)
-
----
-
-.nice.middle.center
-
-Les [CoffeeScript: Accelerated JavaScript Development](http://pragprog.com/book/tbcoffee/coffeescript)
-
----
-
 .middle.center
 
 Et av problemene med CoffeeScript er at man *burde* lære JavaScript.
@@ -902,13 +846,7 @@ Et av problemene med CoffeeScript er at man *burde* lære JavaScript.
 
 ---
 
-.nice.middle.center
-
-Les [JavaScript: The Good Parts](test)!
-
----
-
-## Komme igang med JavaScript
+# Komme igang med JavaScript
 
 * [Understanding “Prototypes” in JavaScript](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)
 * [Understanding JavaScript Function Invocation and "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
@@ -925,13 +863,7 @@ Syntactically Awesome Stylesheets
 
 ---
 
-.nice.middle
-
-Sass er et supersett av .green[CSS3]
-
----
-
-## Vanlig .red[CSS]
+# Vanlig .red[CSS]
 
 … ser ofte ut som dette:
 
@@ -947,7 +879,7 @@ Hvorfor må vi gjenta det samme gang på gang?
 
 ---
 
-## Variabler
+# Variabler
 
 Veldig ofte nevnes samme farger, størrelser og fonter mange ganger på
 tvers av CSS-en.
@@ -972,7 +904,7 @@ Sass støtter også interpolering og funksjoner:
 
 ---
 
-## Nesting
+# Nesting
 
 Istedenfor:
 
@@ -998,7 +930,7 @@ Så kan vi ha:
 
 ---
 
-## Mixins
+# Mixins
 
 Med mixins kan man enkelt trekke inn et sett med properties og selektorer:
 
@@ -1017,7 +949,7 @@ En mixin kan også bruke en annen mixin.
 
 ---
 
-## Selector inheritance
+# Selector inheritance
 
 Ofte skal en klasse ha de samme stilene som en annen klasse. Da brukes som
 regel generelle klasser og mer spesifikke klasser, f.eks:
@@ -1039,7 +971,7 @@ Men med Sass kunne man hatt:
 
 ---
 
-## Hvordan det kan se ut
+# Hvordan det kan se ut
 
     .no-highlight
     $total-width: 575px;
@@ -1075,7 +1007,7 @@ Men med Sass kunne man hatt:
 
 .middle.center
 
-## Spørsmål?
+# Spørsmål?
 
 Presentasjonen er laget med [remark](http://gnab.github.com/remark/).
 

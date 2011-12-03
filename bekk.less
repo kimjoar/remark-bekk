@@ -30,6 +30,13 @@
   background-size: @round-width*@factor @round-height*@factor;
 }
 
+.rounded-corners(@size: 10px) {
+  -moz-border-radius: @size;
+  -webkit-border-radius: @size;
+  -khtml-border-radius: @size;
+  border-radius: @size;
+}
+
 #bekk {
   .slide {
     color: @white;
@@ -127,4 +134,23 @@
   }
 
   a { color: @red; }
+  .slide .content code { font-family: Inconsolata, Monaco, monospace; }
+  pre code { padding: 1em; .rounded-corners; }
+  code { background-color: @lightbrown; }
+
+  .red-circle-top-right {
+    @size: 150px;
+    .rounded-corners(@size / 2);
+
+    height: @size;
+    width: @size;
+    background-color: @red;
+    color: @black;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 3em;
+    right: 3em;
+  }
 }
