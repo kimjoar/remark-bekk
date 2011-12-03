@@ -11,12 +11,23 @@
 
 @logo-height: 115px;
 @logo-width: 466px;
+@round-height: 864px;
+@round-width: 866px;
 
 .bekk-logo(@factor, @position: center) {
   background-image: url(images/bekk.png);
   background-repeat: no-repeat;
   background-position: @position;
   background-size: @logo-width*@factor @logo-height*@factor;
+}
+
+.round-image(@name) {
+  @factor: 1/2;
+
+  background-image: url("images/round/@{name}.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: @round-width*@factor @round-height*@factor;
 }
 
 #bekk {
@@ -29,6 +40,11 @@
 
       .position { font-size: 0.7em; }
     }
+  }
+
+  /* This is just an example of a slide containing a round image */
+  .round {
+    .round-image(24);
   }
 
   .front-page {
