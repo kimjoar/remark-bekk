@@ -8,6 +8,7 @@
       { "highlightStyle": "solarized_light" }
     </script>
     <script src="jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="bekk.js" type="text/javascript"></script>
 
     <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
 
@@ -193,13 +194,4 @@ Presentasjonen er laget med [remark](http://gnab.github.com/remark/).
     </textarea>
     <div id="slideshow"></div>
   </body>
-    <script type="text/javascript">
-      var remark = this.remark;
-      $(document).ready(function() {
-          remark.events.addListener("slidein", function() {
-            $("h1").not($("h1 + span")).wrapInner("<span>");
-            $(".pushed img").not($(".img > img")).parent().wrapInner("<span class='img'>")
-          });
-      });
-    </script>
 </html>
