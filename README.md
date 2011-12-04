@@ -1,3 +1,3 @@
-Sjekk ut [hvordan det ser ut](http://kjbekkelund.github.com/remark-bekk).
+# BEKK-design i remark
 
-Dette er fortsatt på et tåpelig tidlig stadie.
+Sjekk ut [hvordan PoC-en ser ut](http://kjbekkelund.github.com/remark-bekk).
