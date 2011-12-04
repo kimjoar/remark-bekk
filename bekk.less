@@ -11,8 +11,6 @@
 
 @logo-height: 115px;
 @logo-width: 466px;
-@round-height: 864px;
-@round-width: 866px;
 
 .bekk-logo(@factor, @position: center) {
   background-image: url(images/bekk.png);
@@ -22,12 +20,10 @@
 }
 
 .round-image(@name) {
-  @factor: 1/2;
-
   background-image: url("images/round/@{name}.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: @round-width*@factor @round-height*@factor;
+  background-size: 40%;
 }
 
 .rounded-corners(@size: 10px) {
