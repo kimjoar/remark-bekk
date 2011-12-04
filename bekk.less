@@ -155,7 +155,7 @@
   pre code { padding: 1em; .rounded-corners; }
   code { padding: 3px; color: @black;  }
 
-  .red-circle-top-right {
+  .red-circle {
     @size: 170px;
     .rounded-corners(@size / 2);
 
@@ -167,9 +167,17 @@
     color: @black;
     text-align: center;
     vertical-align: middle;
-    position: absolute;
-    top: 3em;
-    right: 3em;
     overflow: hidden;
+
+    &.top-right {
+      position: absolute;
+      top: 3em;
+      right: 3em;
+    }
+    &.top-left {
+      position: absolute;
+      top: 3em;
+      left: 3em;
+    }
   }
 }
