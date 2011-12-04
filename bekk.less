@@ -130,12 +130,15 @@
       z-index: -1;
     }
 
-    span { background: @black; padding: 0 0.6em 0 0; }
+    > span { background: @black; padding: 0 0.6em 0 0; }
   }
+  .middle h1:before,
+  .center h1:before { border: none; }
 
   a { color: @red; }
   .slide .content code { font-family: Inconsolata, Monaco, monospace; }
   pre code { padding: 1em; .rounded-corners; }
+  code { padding: 3px; color: @black;  }
 
   .red-circle-top-right {
     @size: 170px;

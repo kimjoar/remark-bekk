@@ -33,7 +33,7 @@ Kim Joar Bekkelund
 
 .agenda
 
-# <span>Agenda</span>
+# Agenda
 
 * Lære CoffeeScript
 * Forstå JavaScript
@@ -42,7 +42,7 @@ Kim Joar Bekkelund
 
 ---
 
-# <span>CoffeeScript</span>
+# CoffeeScript
 
 Prosjektet utførte et sett sentrale aktiviteter for å effektivisere organisasjonen:
 
@@ -58,11 +58,11 @@ Prosjektet utførte et sett sentrale aktiviteter for å effektivisere organisasj
 
 .round
 
-# <span>Tester rundt bilde</span>
+# Tester rundt bilde
 
 ---
 
-# <span>Boks i hjørnet</span>
+# Boks i hjørnet
 
 .red-circle-top-right[Spørsmål?]
 
@@ -70,7 +70,7 @@ Ikke helt bra enda, mem kommer seg
 
 ---
 
-# <span>JavaScript</span>
+# JavaScript
 
 * Det eneste programmeringsspråket som kjører i alle nettlesere.
 * Brukes for å gjøre ting på klientsiden, f.eks. jobbe med DOM-en.
@@ -81,7 +81,7 @@ Ikke helt bra enda, mem kommer seg
 
 ---
 
-# <span>Men hva er problemet med JavaScript?</span>
+# Men hva er problemet med JavaScript?
 
 Et Ruby-eksempel:
 
@@ -1020,7 +1020,7 @@ Presentasjonen er laget med [remark](http://gnab.github.com/remark/).
       var remark = this.remark;
       $(document).ready(function() {
           remark.events.addListener("slidein", function() {
-            // $("h1").not("span").wrapInner("<span>");
+            $("h1").not($("h1 > span")).wrapInner("<span>");
           });
       });
     </script>
