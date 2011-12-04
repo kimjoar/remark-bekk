@@ -64,7 +64,7 @@ Prosjektet utførte et sett sentrale aktiviteter for å effektivisere organisasj
 
 .pushed
 
-![Good times](images/details/_DSC2394.jpg)
+![Good times](https://github.com/kjbekkelund/remark-bekk/raw/master/images/details/_DSC2394.jpg)
 
 # Boks i hjørnet
 
@@ -1024,7 +1024,8 @@ Presentasjonen er laget med [remark](http://gnab.github.com/remark/).
       var remark = this.remark;
       $(document).ready(function() {
           remark.events.addListener("slidein", function() {
-            $("h1").not($("h1 > span")).wrapInner("<span>");
+            $("h1").not($("h1 + span")).wrapInner("<span>");
+            $(".pushed img").not($(".img > img")).parent().wrapInner("<span class='img'>")
           });
       });
     </script>

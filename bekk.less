@@ -54,11 +54,17 @@
     .round-image(24);
   }
 
-  .pushed img {
-    width: 41.5em;
+  .pushed .img {
     position: absolute;
     top: 2em;
     left: 2em;
+    right: 2em;
+    bottom: 8.5em;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
   }
 
   .front-page {
