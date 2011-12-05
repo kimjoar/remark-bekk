@@ -1,3 +1,11 @@
+/* ---------------------------------- */
+/* --- BEKK theme ------------------- */
+/* ---------------------------------- */
+
+/* ---------------------------------- */
+/* --- Colors ----------------------- */
+/* ---------------------------------- */
+
 @black: #000;
 @white: #fff;
 @red: #FD5158;
@@ -7,10 +15,19 @@
 @brown: #887E6F;
 @lightbrown: #C9C0B5;
 
-@line-width: 6em;
+/* ---------------------------------- */
+/* --- Sizes ------------------------ */
+/* ---------------------------------- */
+
+@h1-line-width: 6em;
+@circle-size: 170px;
 
 @logo-height: 115px;
 @logo-width: 466px;
+
+/* ---------------------------------- */
+/* --- Useful methods --------------- */
+/* ---------------------------------- */
 
 .bekk-logo(@factor, @position: center) {
   background-image: url(images/bekk.png);
@@ -41,138 +58,159 @@
     .content {
       padding-bottom: 2em;
 
+      /* ---------------------------------- */
+      /* --- General styles --------------- */
+      /* ---------------------------------- */
+
+      ul {
+        list-style: disc outside;
+        padding-left: 1em;
+
+        li {
+          color: @lightbrown;
+          padding: 0.4em 0;
+        }
+      }
+
+      h1 {
+        color: @red;
+        text-transform: uppercase;
+        font-weight: normal;
+        font-style: italic;
+        font-size: 1.5em;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+          border-top: 1px solid @lightbrown;
+          content: "";
+          position: absolute;
+          top: 0.6em; left: 0; right: 0; bottom: 0;
+          z-index: -1;
+        }
+
+        > span { background: @black; padding: 0 0.6em 0 0; }
+      }
+
+      a { color: @red; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+
+      code { padding: 3px; color: @black; font-family: Inconsolata, Monaco, monospace; }
+      pre code { padding: 1em; .rounded-corners; }
+
+      /* ---------------------------------- */
+      /* --- Additional classes ----------- */
+      /* ---------------------------------- */
+
+      // Current slide number
       .position { font-size: 0.7em; }
-    }
-  }
 
-  /* This is just an example of a slide containing a round image */
-  .round {
-    .round-image(24);
-  }
+      .circle {
+        .rounded-corners(@circle-size / 2);
 
-  .pushed .img {
-    position: absolute;
-    top: 2em;
-    left: 2em;
-    right: 2em;
-    bottom: 8.5em;
-    overflow: hidden;
+        height: @circle-size;
+        width: @circle-size;
+        line-height: @circle-size;
+        color: @black;
+        text-align: center;
+        overflow: hidden;
 
-    img {
-      width: 100%;
-    }
-  }
+        &.red    { background-color: @red; }
+        &.yellow { background-color: @yellow; }
 
-  .front-page {
-    text-align: center;
-    font-style: italic;
-    vertical-align: bottom;
-
-    .bekk-logo(1/7, center 30px);
-
-    h1 {
-      position: relative;
-      z-index: 1;
-      color: @white;
-      margin: 0 auto 3.2em auto;
-      width: 16em;
-
-      &:before { border: none; }
-
-      &:after {
-        border-top: 4px solid @red;
-        position: absolute;
-        left: 50%;
-        bottom: -1.6em;
-        content: "";
-        width: @line-width;
-        margin-left: -(@line-width / 2);
-        z-index: -1;
+        &.top-right { position: absolute; top: 3em; right: 3em; }
+        &.top-left  { position: absolute; top: 3em; left: 3em;  }
       }
-    }
 
-    h2 { height: 3em; font-size: 1em; color: @lightbrown; font-weight: normal; margin: 2em auto 2em auto; max-width: 25em; }
-    p { font-size: 0.7em; color: @lightbrown; margin: 0.3em 0; }
-    .position { display: none; }
-  }
+      /* ---------------------------------- */
+      /* --- Content slides --------------- */
+      /* ---------------------------------- */
 
-  .agenda {
-    ul {
-      width: 16em;
-      list-style-type: none;
-      padding-left: 0;
-      float: right;
-      margin-top: 2.5em;
+      &.middle h1:before,
+      &.center h1:before { border: none; }
 
-      li {
-        border-bottom: 1px solid @lightbrown;
+      &.front-page {
+        text-align: center;
+        font-style: italic;
+        vertical-align: bottom;
 
-        &:last-child { border-bottom: none; }
+        .bekk-logo(1/7, center 30px);
+
+        h1 {
+          position: relative;
+          z-index: 1;
+          color: @white;
+          margin: 0 auto 3.2em auto;
+          width: 16em;
+
+          &:before { border: none; }
+
+          &:after {
+            border-top: 4px solid @red;
+            position: absolute;
+            left: 50%;
+            bottom: -1.6em;
+            content: "";
+            width: @h1-line-width;
+            margin-left: -(@h1-line-width / 2);
+            z-index: -1;
+          }
+        }
+
+        h2 {
+          height: 3em;
+          font-size: 1em;
+          color: @lightbrown;
+          font-weight: normal;
+          margin: 2em auto 2em auto;
+          max-width: 25em;
+        }
+
+        p {
+          font-size: 0.7em;
+          color: @lightbrown;
+          margin: 0.3em 0;
+        }
+
+        .position { display: none; }
       }
-    }
-  }
 
-  ul {
-    list-style: disc outside;
-    padding-left: 1em;
+      &.agenda {
+        ul {
+          width: 16em;
+          list-style-type: none;
+          padding-left: 0;
+          float: right;
+          margin-top: 2.5em;
 
-    li {
-      color: @lightbrown;
-      padding: 0.4em 0;
-    }
-  }
+          li {
+            border-bottom: 1px solid @lightbrown;
 
-  .pushed h1 { margin-top: 17em; }
+            &:last-child { border-bottom: none; }
+          }
+        }
+      }
 
-  h1 {
-    color: @red;
-    text-transform: uppercase;
-    font-weight: normal;
-    font-style: italic;
-    font-size: 1.5em;
-    position: relative;
-    z-index: 1;
+      &.round {
+        .round-image(24);
+      }
 
-    &:before {
-      border-top: 1px solid @lightbrown;
-      content: "";
-      position: absolute;
-      top: 0.6em; left: 0; right: 0; bottom: 0;
-      z-index: -1;
-    }
+      &.pushed {
+        h1 { margin-top: 17em; }
 
-    > span { background: @black; padding: 0 0.6em 0 0; }
-  }
-  .middle h1:before,
-  .center h1:before { border: none; }
+        .img {
+          position: absolute;
+          top: 2em;
+          left: 2em;
+          right: 2em;
+          bottom: 8.5em;
+          overflow: hidden;
 
-  a { color: @red; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .slide .content code { font-family: Inconsolata, Monaco, monospace; }
-  pre code { padding: 1em; .rounded-corners; }
-  code { padding: 3px; color: @black;  }
-
-  .red-circle {
-    @size: 170px;
-    .rounded-corners(@size / 2);
-
-    height: @size;
-    width: @size;
-    line-height: @size;
-    background-color: @red;
-    color: @black;
-    text-align: center;
-    overflow: hidden;
-
-    &.top-right {
-      position: absolute;
-      top: 3em;
-      right: 3em;
-    }
-    &.top-left {
-      position: absolute;
-      top: 3em;
-      left: 3em;
+          img {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
