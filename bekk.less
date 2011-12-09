@@ -25,6 +25,10 @@
 @logo-height: 115px;
 @logo-width: 466px;
 
+@round-image-factor: 1/2;
+@round-image-height: 864px;
+@round-image-width: 866px;
+
 /* ---------------------------------- */
 /* --- Useful mixins ---------------- */
 /* ---------------------------------- */
@@ -199,8 +203,14 @@
         }
       }
 
-      &.round {
-        .round-image(24);
+      &.round img {
+        @height: @round-image-height * @round-image-factor;
+        @width: @round-image-width   * @round-image-factor;
+
+        position: absolute;
+        top: 50%;  margin-top: -@height / 2;
+        left: 50%; margin-left: -@width / 2;
+        height: @height;
       }
 
       &.pushed {
