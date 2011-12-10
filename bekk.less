@@ -47,6 +47,13 @@
   background-size: 40%;
 }
 
+.centered-image(@height, @width) {
+  position: absolute;
+  top: 50%;  margin-top: -@height / 2;
+  left: 50%; margin-left: -@width / 2;
+  height: @height;
+}
+
 .rounded-corners(@size: 10px) {
   -moz-border-radius: @size;
   -webkit-border-radius: @size;
@@ -126,12 +133,15 @@
         color: @black;
         text-align: center;
         overflow: hidden;
+        display: block;
 
         &.red    { background-color: @red; }
         &.yellow { background-color: @yellow; }
 
         &.top-right { position: absolute; top: 3em; right: 3em; }
         &.top-left  { position: absolute; top: 3em; left: 3em;  }
+
+        &.centered { margin: 0 auto; }
       }
 
       /* ---------------------------------- */
@@ -140,6 +150,16 @@
 
       &.middle h1:before,
       &.center h1:before { border: none; }
+
+      &.cols {
+        .col {
+          float: left; margin-right: 2%;
+          &.last { margin-right: 0;}
+        }
+
+        &.two   { .col { width: 49%; } }
+        &.three { .col { width: 32%; } }
+      }
 
       &.front-page {
         text-align: center;
@@ -207,10 +227,7 @@
         @height: @round-image-height * @round-image-factor;
         @width: @round-image-width   * @round-image-factor;
 
-        position: absolute;
-        top: 50%;  margin-top: -@height / 2;
-        left: 50%; margin-left: -@width / 2;
-        height: @height;
+        .centered-image(@height, @width);
       }
 
       &.pushed {
