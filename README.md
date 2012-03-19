@@ -1,4 +1,4 @@
-# BEKK-design i remark
+# BEKK-theme til [remark](https://github.com/gnab/remark)
 
 Sjekk ut [hvordan PoC-en ser ut](http://kjbekkelund.github.com/remark-bekk/example).
 
