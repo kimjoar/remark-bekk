@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BEKK-theme for remark</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <script src="https://github.com/downloads/gnab/remark/remark-0.3.4.min.js" type="text/javascript"></script>
+    <script src="jquery-1.7.1.js" type="text/javascript"></script>
+    <script src="../lib/bekk.js" type="text/javascript"></script>
+    <link href="../lib/bekk.less" type="text/css" rel="stylesheet/less">
+    <script src="less-1.3.0.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <textarea id="source">
+
+.front-page
+
+# CoffeeScript og Sass
+
+## En introduksjon
+
+Forelesning ved NITH
+
+Kim Joar Bekkelund
+
+18/11/2011
+
+---
+
+.agenda
+
+# Agenda
+
+* Lære CoffeeScript
+* Forstå JavaScript
+* Komme igang med JQuery
+* Se litt på Sass
+
+---
+
+# CoffeeScript
+
+Prosjektet utførte et sett sentrale aktiviteter for å effektivisere organisasjonen:
+
+* Kompilerer ned til JavaScript.Kompilerer ned til JavaScript.Kompilerer ned til JavaScript.Kompilerer ned til JavaScript.
+* … men er ikke et supersett (som Sass er for CSS).
+* Mindre kode enn JavaScript.
+* "Ny funksjonalitet" på toppen av JavaScript.
+* Unngår de dårlige sidene av JavaScript, f.eks. globale variabler.
+* Inspirert av Python og Ruby (dere vil kjenne igjen mye!)
+* Default i Rails 3.1
+
+---
+
+.round
+
+# Tester rundt bilde
+
+![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/round/24.png)
+
+---
+
+.pushed
+
+![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/details/_DSC2394.jpg)
+
+# Boks i hjørnet
+
+.circle.red.top-right[Spørsmål?]
+
+Nå kuttes iallefall bildet, og sirkelen kan settes forskjellige plasser.
+
+---
+
+.pushed
+
+![Good times](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/details/_DSC2394.jpg)
+
+# Boks i hjørnet
+
+.circle.yellow.top-right[Gul?]
+
+---
+
+# JavaScript
+
+* Det eneste programmeringsspråket som kjører i alle nettlesere.
+* Brukes for å gjøre ting på klientsiden, f.eks. jobbe med DOM-en.
+* Lang historie, men unngått av mange i flere år.
+* Renessanse etter AJAX.
+* Web 2.0
+* Node.js
+
+---
+
+# Hva med highlighting av kode?
+
+Vi bruker [Solarized](http://ethanschoonover.com/solarized), som ser ut til å passe godt med BEKK-themet.
+
+Et Ruby-eksempel:
+
+    .ruby
+    names = people.map do |person|
+      person.name.capitalize
+    end
+
+Og et JavaScript-eksempel:
+
+    .javascript
+    var names = []
+    for (var i = 0, l = people.length; i &lt; l; i++) {
+      var person = people[i];
+      var name = person.name.slice(0,1).toUpperCase() +
+                 person.name.slice(1);
+      names.push(name);
+    }
+
+La oss gå gjennom noen av forskjellene.
+
+---
+
+# `.javascript testFunction()`
+
+Det er lett å gjøre feil i JavaScript når man ikke kan språket skikkelig.
+
+* Prototyper
+* Globale variabler
+* `==` vs `===`
+
+Det er til og med en egen bok om hvordan bruke JavaScript rett.
+
+---
+
+.middle.center
+
+# Intro til CoffeeScript
+
+---
+
+# CoffeeScript ≈ Ruby = ♥
+
+Mye er likt Ruby, for eksempel:
+
+* Ingen semikolon
+* Trenger ikke paranteser for å kalle funksjoner
+* Kommentarer starter med `#`
+* Interpolasjon → `#{coffeescripting}`
+* Implisitt `return`
+
+Men CoffeeScript har noen særegenheter fra Ruby:
+
+* Signifikant whitespace
+* Ikke-blokkerende IO (Mindre skummelt enn det høres ut)
+
+---
+
+# Variabler
+
+    .coffee
+    myVariable = "test"
+    someNumber = 42
+    aBoolean = true
+
+Helt likt Ruby — men camelcased.
+
+---
+
+# unless
+
+Vi har unless også i CoffeeScript:
+
+    .coffee
+    alert "bu!" unless person.name == "Kim Joar"
+
+# ?
+
+Er en operator i CoffeeScript, ikke en del av funksjonsnavnet som i Ruby.
+
+    .coffee
+    practice() unless good_enough?
+
+    c ?= d # er det samme som c = d unless c?
+
+---
+
+# Komme igang med JavaScript
+
+* [Understanding “Prototypes” in JavaScript](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)
+* [Understanding JavaScript Function Invocation and "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
+* [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
+* [What should every JavaScript programmer know?](http://stackoverflow.com/questions/2628672/what-should-every-javascript-programmer-know)
+
+---
+
+.cols.three
+
+# Tester 3 kolonner
+
+<div class="col">
+  .circle.red.centered[Kolonne 1]
+
+  *em* sweet
+
+  [kimjoar.net](http://kimjoar.net)
+</div>
+
+<div class="col">
+  .circle.red.centered[Kolonne 2]
+
+  * liste!
+  * nytt element
+  * *winning*
+</div>
+
+<div class="col">
+  .circle.yellow.centered[Kolonne 3]
+
+  # overskrift
+
+  Overskrifter fungerer også i kolonner!
+</div>
+
+---
+
+.cols.two
+
+# Tester 2 kolonner
+
+<div class="col">
+  # Overskrift
+
+  Første kolonne
+</div>
+
+<div class="col center">
+  Andre kolonne
+
+  (med sentrert tekst)
+</div>
+
+---
+
+.middle.center
+
+# Spørsmål?
+
+Presentasjonen er laget med [remark](http://gnab.github.com/remark/).
+
+    </textarea>
+    <div id="slideshow"></div>
+  </body>
+</html>
+
