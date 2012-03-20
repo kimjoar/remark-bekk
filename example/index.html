@@ -14,11 +14,11 @@
 
 .front-page
 
-# CoffeeScript og Sass
+# BEKK-theme
 
-## En introduksjon
+## En (kort) introduksjon
 
-Forelesning ved NITH
+Sjekk ut [remark](https://github.com/gnab/remark)
 
 Kim Joar Bekkelund
 
@@ -30,32 +30,67 @@ Kim Joar Bekkelund
 
 # Agenda
 
-* Lære CoffeeScript
-* Forstå JavaScript
-* Komme igang med JQuery
-* Se litt på Sass
+* Forside og agenda
+* Bilder
+* Lister
+* Kode (med highlighting)
+* Kolonner
+* Lenker
 
 ---
 
-# CoffeeScript
+# Forside
 
-Prosjektet utførte et sett sentrale aktiviteter for å effektivisere organisasjonen:
+Legg til klassen `front-page`. Overskrift, underoverskrift, beskrivelse, navn og dato er obligatorisk.
 
-* Kompilerer ned til JavaScript.Kompilerer ned til JavaScript.Kompilerer ned til JavaScript.Kompilerer ned til JavaScript.
-* … men er ikke et supersett (som Sass er for CSS).
-* Mindre kode enn JavaScript.
-* "Ny funksjonalitet" på toppen av JavaScript.
-* Unngår de dårlige sidene av JavaScript, f.eks. globale variabler.
-* Inspirert av Python og Ruby (dere vil kjenne igjen mye!)
-* Default i Rails 3.1
+Eksempel-slide:
+
+    .no-highlight
+    .front-page
+    
+    # Coffeescript og SASS
+    
+    ## En introduksjon
+    
+    Forelesning ved NITH
+    
+    Kim Joar Bekkelund
+    
+    18/11/2011
+
+For agenda, legg til klassen `agenda` og lag liste:
+
+    .no-highlight
+    .agenda
+
+    * første punkt
+    * andre punkt
+    * tredje punkt
 
 ---
 
 .round
 
-# Tester rundt bilde
+# Rundt bilde
 
 ![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/round/24.png)
+
+---
+
+.round
+
+![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/round/24.png)
+
+---
+
+# Rundt bilde
+
+Eksempel-slide:
+
+    .no-highlight
+    .round
+    
+    ![alternativ tekst](images/round/24.png)
 
 ---
 
@@ -63,38 +98,59 @@ Prosjektet utførte et sett sentrale aktiviteter for å effektivisere organisasj
 
 ![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/details/_DSC2394.jpg)
 
-# Boks i hjørnet
+# Stort bilde
 
-.circle.red.top-right[Spørsmål?]
-
-Nå kuttes iallefall bildet, og sirkelen kan settes forskjellige plasser.
+Og litt undertekst
 
 ---
 
 .pushed
 
-![Good times](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/details/_DSC2394.jpg)
+![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/details/_DSC2394.jpg)
 
-# Boks i hjørnet
+# Stort bilde med rundt boks
 
-.circle.yellow.top-right[Gul?]
+.circle.yellow.top-right[Fin tekst]
+
+Og såklart litt tekst
 
 ---
 
-# JavaScript
+# Stort bilde
 
-* Det eneste programmeringsspråket som kjører i alle nettlesere.
-* Brukes for å gjøre ting på klientsiden, f.eks. jobbe med DOM-en.
-* Lang historie, men unngått av mange i flere år.
-* Renessanse etter AJAX.
-* Web 2.0
-* Node.js
+Bruk klassen `pushed` og legg til et stort bilde.
+
+Eksempel-slide:
+
+    .no-highlight
+    .pushed
+    
+    ![](images/details/_DSC2394.jpg)
+    
+    # Stort bilde med rundt boks
+    
+    \.circle.yellow.top-right[Fin tekst]
+    
+    Og såklart litt tekst
+
+---
+
+# Lister
+
+* Bare bruk `*`
+* ... så får du en liste
+
+Og:
+
+1. Nummererte lister er også mulig!
+2. Bare skriv `1.`, `2.`, og så videre
 
 ---
 
 # Hva med highlighting av kode?
 
-Vi bruker [Solarized](http://ethanschoonover.com/solarized), som ser ut til å passe godt med BEKK-themet.
+Vi bruker [Solarized](http://ethanschoonover.com/solarized), som ser ut
+til å passe godt med BEKK-themet.
 
 Et Ruby-eksempel:
 
@@ -114,86 +170,83 @@ Og et JavaScript-eksempel:
       names.push(name);
     }
 
-La oss gå gjennom noen av forskjellene.
+For kodeblokk, ha 4 mellomrom før kode:
+
+    .no-highlight
+        function test() {
+          return "test"
+        }
 
 ---
 
 # `.javascript testFunction()`
 
-Det er lett å gjøre feil i JavaScript når man ikke kan språket skikkelig.
-
-* Prototyper
-* Globale variabler
-* `==` vs `===`
-
-Det er til og med en egen bok om hvordan bruke JavaScript rett.
+Kode i overskrift ser fortsatt litt vel funky ut, og bør nok unngås.
 
 ---
 
 .middle.center
 
-# Intro til CoffeeScript
+# Midtjusterte overskrifter
 
 ---
 
-# CoffeeScript ≈ Ruby = ♥
+# Midtjusterte overskrifter
 
-Mye er likt Ruby, for eksempel:
+Kode for å få til midtjustert overskrift:
 
-* Ingen semikolon
-* Trenger ikke paranteser for å kalle funksjoner
-* Kommentarer starter med `#`
-* Interpolasjon → `#{coffeescripting}`
-* Implisitt `return`
-
-Men CoffeeScript har noen særegenheter fra Ruby:
-
-* Signifikant whitespace
-* Ikke-blokkerende IO (Mindre skummelt enn det høres ut)
-
----
-
-# Variabler
-
-    .coffee
-    myVariable = "test"
-    someNumber = 42
-    aBoolean = true
-
-Helt likt Ruby — men camelcased.
-
----
-
-# unless
-
-Vi har unless også i CoffeeScript:
-
-    .coffee
-    alert "bu!" unless person.name == "Kim Joar"
-
-# ?
-
-Er en operator i CoffeeScript, ikke en del av funksjonsnavnet som i Ruby.
-
-    .coffee
-    practice() unless good_enough?
-
-    c ?= d # er det samme som c = d unless c?
-
----
-
-# Komme igang med JavaScript
-
-* [Understanding “Prototypes” in JavaScript](http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/)
-* [Understanding JavaScript Function Invocation and "this"](http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
-* [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
-* [What should every JavaScript programmer know?](http://stackoverflow.com/questions/2628672/what-should-every-javascript-programmer-know)
+    .no-highlight
+    .middle.center
+    
+    # Midtjusterte overskrifter
 
 ---
 
 .cols.three
 
-# Tester 3 kolonner
+# 3 kolonner
+
+<div class="col">
+  Første kolonne.
+
+  For å få til kolonner må vi bruke litt HTML, sammen med to klasser.
+
+    .no-highlight
+    .cols.three
+
+    # Kolonnetest
+
+    <div class="col">
+      kolonne 1
+    </div>
+
+    <div class="col">
+      kolonne 2
+    </div>
+
+    <div class="col">
+      kolonne 3
+    </div>
+</div>
+
+<div class="col">
+  Andre kolonne.
+</div>
+
+<div class="col">
+  Tredje kolonne
+
+  Vi støtter også to kolonner ved bruk av klassen `two` istedenfor `three`
+
+    .no-highlight
+    .cols.two
+</div>
+
+---
+
+.cols.three
+
+# Kolonner støtter Markdown
 
 <div class="col">
   .circle.red.centered[Kolonne 1]
@@ -221,29 +274,11 @@ Er en operator i CoffeeScript, ikke en del av funksjonsnavnet som i Ruby.
 
 ---
 
-.cols.two
+# Noen lenker
 
-# Tester 2 kolonner
-
-<div class="col">
-  # Overskrift
-
-  Første kolonne
-</div>
-
-<div class="col center">
-  Andre kolonne
-
-  (med sentrert tekst)
-</div>
-
----
-
-.middle.center
-
-# Spørsmål?
-
-Presentasjonen er laget med [remark](http://gnab.github.com/remark/).
+* [remark](https://github.com/gnab/remark)
+* [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
+* [Eksempelpresentasjon](http://bekkopen.github.com/infrastruktur-som-kode/) som bruker BEKK themet
 
     </textarea>
     <div id="slideshow"></div>

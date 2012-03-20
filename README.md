@@ -1,6 +1,6 @@
 # BEKK-theme til [remark](https://github.com/gnab/remark)
 
-Sjekk ut [hvordan PoC-en ser ut](http://kjbekkelund.github.com/remark-bekk/example).
+Sjekk ut [introduksjon](http://kjbekkelund.github.com/remark-bekk/example) til BEKK-theme for remark.
 
 For å inkludere BEKK-themet:
 
