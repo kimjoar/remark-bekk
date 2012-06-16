@@ -33,11 +33,14 @@
 /* --- Useful mixins ---------------- */
 /* ---------------------------------- */
 
-.bekk-logo(@factor, @position: center) {
-  background-image: url("https://github.com/kjbekkelund/remark-bekk/raw/master/lib/images/bekk.png");
+.bekk-logo(@factor, @position: center, @type: "") {
+  background-image: url("https://github.com/kjbekkelund/remark-bekk/raw/master/lib/images/bekk@{type}.png");
   background-repeat: no-repeat;
   background-position: @position;
   background-size: @logo-width*@factor @logo-height*@factor;
+}
+.bekk-logo-white(@factor, @position: center) {
+  .bekk-logo(@factor, @position, "-white");
 }
 
 .centered-image(@height, @width) {
@@ -59,10 +62,124 @@
 /* ---------------------------------- */
 
 #slideshow {
-  .slide {
-    color: @white;
-    background-color: @black;
+  &, &.black {
+    .slide {
+      color: @white;
+      background-color: @black;
 
+      .content {
+        li {
+          color: @black;
+        }
+        h1 {
+          color: @red;
+          &:before {
+            border-top-color: @lightbrown;
+          }
+          > span { background-color: @black; }
+        }
+        a {
+          color: @red;
+        }
+        code { color: @black; background-color: #FDF6E3; }
+
+        &.cols {
+          .col h1 {
+            color: @white;
+          }
+        }
+
+        &.front-page {
+          .bekk-logo(1/7, center 30px);
+
+          h1 {
+            color: @white;
+
+            &:after {
+              border-top-color: @red;
+            }
+          }
+
+          h2 {
+            color: @lightbrown;
+          }
+
+          // Maybe we should use a list instead of paragraphs for this
+          p {
+            color: @lightbrown;
+          }
+        }
+
+        &.agenda {
+          ul {
+            li {
+              color: @white;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.white {
+    .slide {
+      color: @black;
+      background-color: @white;
+
+      .content {
+        li {
+          color: @black;
+        }
+        h1 {
+          color: @darkbrown;
+          &:before {
+            border-top-color: @black;
+          }
+          > span { background-color: @white; }
+        }
+        a {
+          color: @red;
+        }
+        code { color: @black; background-color: #FDF6E3; }
+
+        &.cols {
+          .col h1 {
+            color: @black;
+          }
+        }
+
+        &.front-page {
+          .bekk-logo-white(1/7, center 30px);
+
+          h1 {
+            color: @black;
+
+            &:after {
+              border-top-color: @darkbrown;
+            }
+          }
+
+          h2 {
+            color: @darkbrown;
+          }
+
+          // Maybe we should use a list instead of paragraphs for this
+          p {
+            color: @darkbrown;
+          }
+        }
+
+        &.agenda {
+          ul {
+            li {
+              color: @black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slide {
     .content {
       padding-bottom: 2em;
 
@@ -78,12 +195,10 @@
         padding-left: 1em;
       }
       li {
-        color: @white;
         padding: 0.4em 0 0.4em 1em;
       }
 
       h1 {
-        color: @red;
         text-transform: uppercase;
         font-weight: normal;
         font-style: italic;
@@ -92,25 +207,25 @@
         z-index: 1;
 
         &:before {
-          border-top: 1px solid @lightbrown;
+          border-top-width: 1px;
+          border-top-style: solid;
           content: "";
           position: absolute;
           top: 0.6em; left: 0; right: 0; bottom: 0;
           z-index: -1;
         }
 
-        > span { background: @black; padding: 0 0.6em 0 0; }
+        > span { padding: 0 0.6em 0 0; }
         code { text-transform: none; font-style: normal; }
       }
 
       a {
-        color: @red;
         text-decoration: none;
 
         &:hover { text-decoration: underline; }
       }
 
-      code { padding: 3px; color: @black; font-family: Inconsolata, Consolas, Monaco, monospace; }
+      code { padding: 3px; font-family: Inconsolata, Consolas, Monaco, monospace; }
       pre code { padding: 1em; .rounded-corners; }
 
       /* ---------------------------------- */
@@ -151,7 +266,6 @@
         .col {
           h1 {
             font-size: 1.1em;
-            color: @white;
             text-transform: none;
             font-style: normal;
           }
@@ -169,19 +283,17 @@
         font-style: italic;
         vertical-align: bottom;
 
-        .bekk-logo(1/7, center 30px);
-
         h1 {
           position: relative;
           z-index: 1;
-          color: @white;
           margin: 0 auto 3.2em auto;
           width: 16em;
 
           &:before { border: none; }
 
           &:after {
-            border-top: 4px solid @red;
+            border-top-width: 4px;
+            border-top-style: solid;
             position: absolute;
             left: 50%;
             bottom: -1.6em;
@@ -195,7 +307,6 @@
         h2 {
           height: 3em;
           font-size: 1em;
-          color: @lightbrown;
           font-weight: normal;
           margin: 2em auto 2em auto;
           max-width: 25em;
@@ -204,7 +315,6 @@
         // Maybe we should use a list instead of paragraphs for this
         p {
           font-size: 0.7em;
-          color: @lightbrown;
           margin: 0.3em 0;
         }
 
@@ -220,7 +330,6 @@
           position: absolute;
 
           li {
-            color: #fff;
             text-transform: uppercase;
             padding: 1em 0;
             font-weight: normal;
